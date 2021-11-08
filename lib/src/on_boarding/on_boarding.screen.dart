@@ -52,8 +52,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     final controller = OnBoardingController.read(context);
     if (!controller.isLastStep) {
       pageController.nextPage(
-        duration: const Duration(milliseconds: 200),
-        curve: Curves.easeInOut,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOutCubic,
       );
     }
     controller.nextStep();

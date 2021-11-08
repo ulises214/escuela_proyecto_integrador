@@ -11,7 +11,7 @@ class OnBoardingStepsView extends StatelessWidget {
     final controller = OnBoardingController.of(context);
     return Wrap(
       direction: Axis.horizontal,
-      spacing: 15.0,
+      spacing: 5.0,
       children: List.generate(
         controller.titleItems.length,
         (i) => _Circle(
@@ -28,10 +28,20 @@ class _Circle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(
-      minRadius: 4,
-      maxRadius: 4,
-      backgroundColor: isActive ? kTokenPrimaryColor : kTokenOffTextColor,
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 200),
+      width: isActive ? 24.0 : 8.0,
+      height: 8.0,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(4.0),
+        color: isActive ? kTokenPrimaryColor : kTokenOffTextColor,
+        // shape: BoxShape.circle,
+      ),
     );
+    // return CircleAvatar(
+    //   minRadius: 4,
+    //   maxRadius: 4,
+    //   backgroundColor: isActive ? kTokenPrimaryColor : kTokenOffTextColor,
+    // );
   }
 }

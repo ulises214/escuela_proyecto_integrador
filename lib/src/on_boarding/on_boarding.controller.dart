@@ -4,6 +4,24 @@ import 'package:provider/provider.dart';
 import '../shared/constants/images.dart';
 import 'on_boarding.service.dart';
 
+const _titleData = [
+  {
+    'title': 'Lleva ya, comida rápida',
+    'imagePath': ImagesPaths.sushiPlato,
+    'description': 'Market place de comida rápida por restaurantes o tiendas',
+  },
+  {
+    'title': 'Monitorea tu pedido',
+    'imagePath': ImagesPaths.breakFastPlato,
+    'description': 'Todo el proceso en tu mano: pago, pedido, envio y entrega',
+  },
+  {
+    'title': 'Justa competencia',
+    'imagePath': ImagesPaths.hamburgerPlato,
+    'description': 'Precios justos para los clientes y vendedores',
+  },
+];
+
 class OnBoardingController with ChangeNotifier {
   final OnBoardingService _service;
   late bool _isFirstTime;
@@ -24,26 +42,15 @@ class OnBoardingController with ChangeNotifier {
 
   Future<void> init() async {
     _isFirstTime = await _service.getIsFistTime();
-    _titleItems = const [
-      OnBoardingTitleItem(
-        title: 'Entrega de alimentos',
-        imagePath: ImagesPaths.sushiPlato,
-        description: 'Buscamos los restaurantes mejor valorados cerca de ti y '
-            'te los llevamos directamente a la puerta',
-      ),
-      OnBoardingTitleItem(
-        title: 'Entrega de alimentos',
-        imagePath: ImagesPaths.breakFastPlato,
-        description: 'Buscamos los restaurantes mejor valorados cerca de ti y '
-            'te los llevamos directamente a la puerta',
-      ),
-      OnBoardingTitleItem(
-        title: 'Entrega de alimentos',
-        imagePath: ImagesPaths.hamburgerPlato,
-        description: 'Buscamos los restaurantes mejor valorados cerca de ti y '
-            'te los llevamos directamente a la puerta',
-      ),
-    ];
+    _titleItems = _titleData
+        .map(
+          (e) => OnBoardingTitleItem(
+            title: e['title']!,
+            imagePath: e['imagePath']!,
+            description: e['description']!,
+          ),
+        )
+        .toList();
     _currentStep = 0;
     _stepCount = _titleItems.length - 1;
   }

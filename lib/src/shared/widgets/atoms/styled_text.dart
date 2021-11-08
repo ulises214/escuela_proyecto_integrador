@@ -9,11 +9,13 @@ class StyledText extends StatelessWidget {
   final double fontSize;
   final String data;
   final TextStyle style;
+  final TextAlign? textAlign;
   StyledText.normal(
     this.data, {
     Key? key,
     this.bold,
     this.italic,
+    this.textAlign,
     this.color = kTokenPrimaryTextColor,
   })  : style = kTextStylePopins,
         fontSize = 16,
@@ -23,6 +25,7 @@ class StyledText extends StatelessWidget {
     Key? key,
     this.bold,
     this.italic,
+    this.textAlign,
     this.color = kTokenSecondaryTextColor,
   })  : style = kTextStyleAndada,
         fontSize = 42,
@@ -32,6 +35,7 @@ class StyledText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       data,
+      textAlign: textAlign,
       style: style.copyWith(
         color: color,
         fontSize: fontSize,

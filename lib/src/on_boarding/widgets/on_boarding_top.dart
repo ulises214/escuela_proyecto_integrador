@@ -41,34 +41,29 @@ class _TitleItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(
         bottom: 60.0,
+        top: kToolbarHeight + 20,
+        left: 40,
+        right: 40,
       ),
-      child: Stack(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Positioned(
-            top: kToolbarHeight + 20,
-            left: 0,
-            right: 0,
+          Image(
+            image: AssetImage(item.imagePath),
             height: 200,
-            child: Image(
-              image: AssetImage(item.imagePath),
+          ),
+          const Expanded(child: SizedBox.shrink()),
+          Expanded(
+            child: StyledText.presentationTitle(
+              item.title,
+              bold: true,
+              textAlign: TextAlign.start,
             ),
           ),
-          Positioned(
-            bottom: 0,
-            left: 40,
-            right: 40,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                StyledText.presentationTitle(item.title, bold: true),
-                const SizedBox(height: 20),
-                StyledText.normal(
-                  item.description,
-                  color: kTokenSecondaryTextColor,
-                )
-              ],
-            ),
-          ),
+          StyledText.normal(
+            item.description,
+            color: kTokenSecondaryTextColor,
+          )
         ],
       ),
     );

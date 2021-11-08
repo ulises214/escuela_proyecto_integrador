@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../shared/theme/tokens.dart';
+import '../../shared/theme/theme.dart';
 import '../../shared/widgets/atoms/styled_text.dart';
 import '../on_boarding.controller.dart';
 import 'on_boarding_top_background.dart';

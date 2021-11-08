@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../theme/colors.dart';
-import '../../theme/tokens.dart';
+import '../../theme/theme.dart';
 
 class MainFab extends StatelessWidget {
   final IconData icon;

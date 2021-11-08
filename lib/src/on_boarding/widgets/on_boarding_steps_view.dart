@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../shared/theme/tokens.dart';
+import '../../shared/theme/theme.dart';
 import '../on_boarding.controller.dart';
 
 class OnBoardingStepsView extends StatelessWidget {

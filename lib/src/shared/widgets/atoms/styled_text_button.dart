@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../theme/tokens.dart';
+import '../../theme/theme.dart';
 import 'styled_text.dart';
 
 class StyledTextButton extends StatelessWidget {

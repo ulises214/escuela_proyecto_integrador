@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'src/app.dart';
 import 'src/on_boarding/on_boarding.controller.dart';
 import 'src/on_boarding/on_boarding.service.dart';
-import 'src/shared/theme/tokens.dart';
+import 'src/shared/theme/theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

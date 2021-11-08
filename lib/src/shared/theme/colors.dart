@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of './theme.dart';
 
 const kColorDarkPurple = Color(0XFF141029);
 const kColorFawn = Color(0XFFE9A469);

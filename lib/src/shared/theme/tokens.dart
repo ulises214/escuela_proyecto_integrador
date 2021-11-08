@@ -1,8 +1,8 @@
-import 'colors.dart';
+part of './theme.dart';
 
 const kTokenCardColor = kColorWhite;
-const kTokenFontAndadaPro = 'Andada Pro';
-const kTokenFontPoppins = 'Poppins';
+// const kTokenFontAndadaPro = 'Andada Pro';
+// const kTokenFontPoppins = 'Poppins';
 const kTokenIconColor = kColorFulvous;
 const kTokenOffTextColor = kColorSilverMetalic;
 const kTokenPrimaryColor = kColorFulvous;

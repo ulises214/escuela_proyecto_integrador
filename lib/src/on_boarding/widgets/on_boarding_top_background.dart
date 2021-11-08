@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../shared/theme/tokens.dart';
+import '../../shared/theme/theme.dart';
 
 class OnBoardingTopBackground extends StatelessWidget {
   final Widget? child;

@@ -18,7 +18,17 @@ class StyledText extends StatelessWidget {
     this.textAlign,
     this.color = kTokenPrimaryTextColor,
   })  : style = kTextStylePopins,
-        fontSize = 16,
+        fontSize = 18,
+        super(key: key);
+  StyledText.pageTitle(
+    this.data, {
+    Key? key,
+    this.bold,
+    this.italic,
+    this.textAlign,
+    this.color = kTokenPrimaryTextColor,
+  })  : style = kTextStyleAndada,
+        fontSize = 26,
         super(key: key);
   StyledText.presentationTitle(
     this.data, {
@@ -29,6 +39,16 @@ class StyledText extends StatelessWidget {
     this.color = kTokenSecondaryTextColor,
   })  : style = kTextStyleAndada,
         fontSize = 42,
+        super(key: key);
+  StyledText.secondary(
+    this.data, {
+    Key? key,
+    this.bold,
+    this.italic,
+    this.textAlign,
+    this.color = kTokenOffTextColor,
+  })  : style = kTextStylePopins,
+        fontSize = 14,
         super(key: key);
 
   @override

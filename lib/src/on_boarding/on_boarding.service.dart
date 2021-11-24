@@ -12,7 +12,7 @@ class OnBoardingService {
 
   Future<bool> getIsFistTime() async {
     final storedValue = await _storage.get(_isFirstTimeKey);
-    return true;
+    return false;
     // return storedValue?.toString() == true.toString();
   }
 

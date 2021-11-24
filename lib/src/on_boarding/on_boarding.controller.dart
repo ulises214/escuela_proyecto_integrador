@@ -58,8 +58,6 @@ class OnBoardingController with ChangeNotifier {
   void nextStep() {
     if (!isLastStep) {
       _currentStep++;
-    } else {
-      finishOnBoarding();
     }
     notifyListeners();
   }

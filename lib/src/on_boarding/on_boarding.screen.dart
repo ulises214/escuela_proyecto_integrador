@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../home/home.screen.dart';
+import '../routes.controller.dart';
 import 'on_boarding.controller.dart';
 import 'widgets/on_boarding_fab.dart';
 import 'widgets/on_boarding_top.dart';
 
 class OnBoardingScreen extends StatefulWidget {
+  static const routeName = '/on-boarding';
   const OnBoardingScreen({Key? key}) : super(key: key);
 
   @override
@@ -48,15 +51,18 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     pageController = PageController(initialPage: 0, keepPage: true);
   }
 
-  void _onNext() {
+  void _onNext() async {
     final controller = OnBoardingController.read(context);
     if (!controller.isLastStep) {
       pageController.nextPage(
         duration: const Duration(milliseconds: 300),
         curve: Curves.easeInOutCubic,
       );
+      controller.nextStep();
+    } else {
+      await controller.finishOnBoarding();
+      RouteController.read(context).toAndReplace(HomeScreen.routeName);
     }
-    controller.nextStep();
   }
 
   void _onPageChange(int currentPage) {

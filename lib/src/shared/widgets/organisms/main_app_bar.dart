@@ -7,7 +7,7 @@ class MainAppBar extends StatefulWidget implements PreferredSizeWidget {
   const MainAppBar({Key? key}) : super(key: key);
 
   @override
-  Size get preferredSize => const Size(double.infinity, kToolbarHeight * 2);
+  Size get preferredSize => const Size(double.infinity, kToolbarHeight * 1.25);
 
   @override
   State<MainAppBar> createState() => _MainAppBarState();
@@ -16,21 +16,23 @@ class MainAppBar extends StatefulWidget implements PreferredSizeWidget {
 class _MainAppBarState extends State<MainAppBar> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox.expand(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 5.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            RouteSelectorPopUp(
-              onTap: (i) {},
-              routes: const ['Pito1', 'Pito2'],
-              currentRoute: 'Home',
-            ),
-            const MockAvatar(
-              size: kToolbarHeight,
-            ),
-          ],
+    return SafeArea(
+      child: SizedBox.expand(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 5.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              RouteSelectorPopUp(
+                onTap: (i) {},
+                routes: const ['Pito1', 'Pito2'],
+                currentRoute: 'Home',
+              ),
+              const MockAvatar(
+                size: kToolbarHeight,
+              ),
+            ],
+          ),
         ),
       ),
     );

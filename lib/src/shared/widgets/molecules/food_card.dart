@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../product_detail/product_detail.screen.dart';
+import '../../../routes.controller.dart';
 import '../../theme/theme.dart';
 import '../atoms/styled_text.dart';
 
@@ -19,24 +21,29 @@ class FoodCard extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 250,
-      width: 250,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Column(
-        children: [
-          Expanded(
-            flex: 2,
-            child: _Top(image: image, time: time),
-          ),
-          Expanded(
-            flex: 1,
-            child: _Bottom(title: title, stars: stars, price: price),
-          ),
-        ],
+    return GestureDetector(
+      onTap: () {
+        RouteController.read(context).to(ProductDetailScreen.routeName);
+      },
+      child: Container(
+        height: 250,
+        width: 250,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Column(
+          children: [
+            Expanded(
+              flex: 2,
+              child: _Top(image: image, time: time),
+            ),
+            Expanded(
+              flex: 1,
+              child: _Bottom(title: title, stars: stars, price: price),
+            ),
+          ],
+        ),
       ),
     );
   }

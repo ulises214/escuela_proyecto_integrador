@@ -20,17 +20,7 @@ class StyledIconButton extends StatelessWidget {
       width: size,
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          stops: [0.1, 0.3, 0.6, 0.95],
-          colors: [
-            kColorFulvous,
-            kColorFawn,
-            kColorFulvous,
-            kColorFawn,
-          ],
-        ),
+        gradient: kTokenMainGradient,
       ),
       child: Material(
         clipBehavior: Clip.antiAlias,

@@ -8,12 +8,12 @@ class RouteController extends ChangeNotifier {
     return _router.currentState?.canPop() ?? false;
   }
 
-  void pop<T extends Object>([T? result]) {
-    _router.currentState?.pop(result);
+  void pop() {
+    _router.currentState?.pop();
   }
 
-  Future<T?>? to<T extends Object>(String route) {
-    return _router.currentState?.pushNamed<T>(route);
+  void to(String route) {
+    _router.currentState?.pushNamed(route);
   }
 
   void toAndReplace(String route) {
